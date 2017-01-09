@@ -1,0 +1,9 @@
+{
+  "name": "df-fe",
+  "version": "1.0.0",
+  "description": "dengfan front end app excercise",
+  "main": "index.js",
+  "repository": "git+ssh://git@github.com:leondeng/df-fe.git",
+  "author": "Fan Deng <leondeng@gmail.com>",
+  "license": "MIT"
+}
