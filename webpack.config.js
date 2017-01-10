@@ -1,7 +1,22 @@
+var webpack = require('webpack'),
+    // path = require('path'),
+    yargs = require('yargs');
+
+var fileName = 'de-fe',
+    plugins = [],
+    outputFile;
+
+if (yargs.argv.p) {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
+  outputFile = fileName + '.min.js';
+} else {
+  outputFile = fileName + '.js';
+}
+
 module.exports = {
     entry: "./src/index.tsx",
     output: {
-        filename: "bundle.js",
+        filename: outputFile,
         path: __dirname + "/dist"
     },
 
@@ -16,13 +31,32 @@ module.exports = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
+            {
+                test: /\.tsx?$/,
+                loader: "awesome-typescript-loader"
+            }
         ],
 
         preLoaders: [
+            {
+                test: /\.tsx?$/,
+                loader: 'tslint',
+                exclude: /node_modules/
+            },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { test: /\.js$/, loader: "source-map-loader" }
+            {
+                test: /\.js$/,
+                loader: "source-map-loader"
+            }
         ]
+    },
+
+    plugins: plugins,
+
+    // Individual Plugin Options
+    tslint: {
+        emitErrors: true,
+        failOnHint: true
     },
 
     // When importing a module whose path matches one of the following, just
