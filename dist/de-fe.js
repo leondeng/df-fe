@@ -48,7 +48,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
 	var Hello_1 = __webpack_require__(3);
-	ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: (undefined), framework: ("1.0.0") }), document.getElementById("example"));
+	ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: ("DF-FE"), framework: ("Dev") }), document.getElementById("example"));
 
 
 /***/ },
