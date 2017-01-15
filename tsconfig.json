@@ -1,11 +1,23 @@
 {
     "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "lib": ["es6", "dom"],
+        "module": "commonjs",
+        "noImplicitAny": true,
         "outDir": "./dist/",
         "sourceMap": true,
-        "noImplicitAny": true,
-        "module": "commonjs",
         "target": "es5",
-        "jsx": "react"
+        "types": [
+            "reflect-metadata",
+            "chai",
+            "enzyme",
+            "mocha",
+            "react",
+            "react-addons-test-utils",
+            "react-dom"
+        ]
     },
     "include": [
         "./**/*.tsx"

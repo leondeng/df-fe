@@ -1172,6 +1172,10 @@ interpret@^0.6.4:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-0.6.6.tgz#fecd7a18e7ce5ca6abfb953e1f86213a49f1625b"
 
+inversify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/inversify/-/inversify-3.0.0.tgz#b0e5f7e48f6a3535014b2f12e23385cae3894dab"
+
 ipaddr.js@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.1.1.tgz#c791d95f52b29c1247d5df80ada39b8a73647230"
@@ -2020,6 +2024,10 @@ readdirp@^2.0.0:
     minimatch "^3.0.2"
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
+
+reflect-metadata@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.9.tgz#987238dc87a516895fe457f130435ffbd763a4d4"
 
 regex-cache@^0.4.2:
   version "0.4.3"
