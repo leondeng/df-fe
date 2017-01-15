@@ -1,12 +1,13 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import { container, Application } from './config'
+import { IDENTIFIER } from './constants'
 
-import {Hello} from "./components/Hello";
+import {Hello} from './components/Hello'
 
-declare const APP_NAME: string;
-declare const APP_ENV: string;
+let app = container.get<Application>(IDENTIFIER.APPLICATION)
 
 ReactDOM.render(
-    <Hello compiler={APP_NAME} framework={APP_ENV} />,
-    document.getElementById("example")
-);
+    <Hello compiler={app.name} framework={app.env} />,
+    document.getElementById('example')
+)
