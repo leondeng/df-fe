@@ -9,6 +9,8 @@
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/enzyme": "^2.7.1",
+    "@types/es6-promise": "^0.0.32",
+    "@types/isomorphic-fetch": "^0.0.31",
     "@types/mocha": "^2.2.37",
     "@types/react": "^0.0.0",
     "@types/react-addons-test-utils": "^0.14.16",
@@ -17,7 +19,9 @@
     "chai": "^3.5.0",
     "dotenv": "^4.0.0",
     "enzyme": "^2.7.0",
+    "es6-promise": "^4.0.5",
     "inversify": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "mocha": "^3.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
