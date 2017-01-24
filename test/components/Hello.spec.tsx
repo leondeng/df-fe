@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import {expect} from 'chai';
-import * as TestUtils from 'react-addons-test-utils';
+// import * as TestUtils from 'react-addons-test-utils';
 
 import {Hello} from '../../src/components/Hello';
 

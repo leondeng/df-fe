@@ -39,6 +39,10 @@ module.exports = {
 
     module: {
         loaders: [
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
