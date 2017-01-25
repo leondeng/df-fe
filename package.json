@@ -44,7 +44,7 @@
   "scripts": {
     "build": "webpack",
     "build:prod": "webpack -p",
-    "test": "karma start",
-    "test:auto": "mocha --opts config/mocha.opts --watch"
+    "test": "karma start --single-run",
+    "watch": "karma start"
   }
 }
