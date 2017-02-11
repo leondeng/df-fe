@@ -7,11 +7,19 @@ var fileName = 'de-fe',
     envFile = '.env';
 
 if (yargs.argv.p) {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
-  outputFile = fileName + '.min.js';
-  envFile = envFile + '.prod';
+    plugins.push(new webpack.optimize.UglifyJsPlugin({
+        // minimize: true,
+        sourceMap: true,
+    }));
+
+    plugins.push(new webpack.LoaderOptionsPlugin({
+        minimize: true,
+    }));
+
+    outputFile = fileName + '.min.js';
+    envFile = envFile + '.prod';
 } else {
-  outputFile = fileName + '.js';
+    outputFile = fileName + '.js';
 }
 
 require('dotenv').config({path: envFile});
@@ -34,43 +42,37 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [/*"",*/ ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
 
     module: {
-        loaders: [
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
-            },
+        rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
                 loader: "awesome-typescript-loader"
-            }
-        ],
+            },
 
-        preLoaders: [
             {
                 test: /\.tsx?$/,
-                loader: 'tslint',
-                exclude: /node_modules/
+                enforce: "pre",
+                loader: 'tslint-loader',
+                exclude: /node_modules/,
+                options: {
+                    emitErrors: true,
+                    failOnHint: true
+                }
             },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
                 test: /\.js$/,
+                enforce: "pre",
                 loader: "source-map-loader"
             }
-        ]
+        ],
     },
 
     plugins: plugins,
-
-    // Individual Plugin Options
-    tslint: {
-        emitErrors: true,
-        failOnHint: true
-    },
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.

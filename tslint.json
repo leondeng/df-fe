@@ -50,7 +50,7 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [true, "single"],
+    "quotemark": [true, "single", "jsx-double"],
     "radix": true,
     "semicolon": false,
     "triple-equals": [true, "allow-null-check"],
